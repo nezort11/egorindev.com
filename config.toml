@@ -1,0 +1,61 @@
+baseurl = "/"
+languageCode = 'en-us'
+title = "EgorInDev"
+theme = "PaperMode"
+
+paginate = 5
+enableEmoji = true
+ignoreErrors = ["error-remote-getjson"] # twitter
+
+[params]
+# Meta
+#
+headline = "EgorInDev"
+description = "Blog about web development, scripting and self-hosting."
+keywords = ["blog", "notes", "markdown", "personal"]
+author = "Me"
+# Site
+#
+defaultTheme = "auto"
+mainSections = ["posts"]
+intro = true
+# Post
+#
+dateFormat = "Mon, Jan 2, 2006"
+ShowToc = true
+TocOpen = false
+ShowCodeCopyButtons = true
+# 3rd-parties
+#
+github = "https://github.com/Egor4ik325"
+email = "nezort11@gmail.com"
+opengraph = true
+
+[params.assets]
+favicon = "/favicon.ico"
+favicon16x16 = "/favicon-16x16.png"
+favicon32x32 = "/favicon-32x32.png"
+apple_touch_icon = "/apple-touch-icon.png"
+
+[params.homeInfoParams]
+Title = "hi, everyone 👋"
+Content = "Welcome to my simplest as possible markdown notes store. I hope you will find them helpful."
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/Egor4ik325"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/nezort11"
+
+# [[params.socialIcons]]
+# name = "stackoverflow"
+# url = "https://stackoverflow.com/users/13774599/egor4ik325"
+# [[params.socialIcons]]
+# name = "fiverr"
+# url = "https://www.fiverr.com/nezort11"
+# shareTwitter = true
+
+[permalinks]
+post = "/:filename/"
