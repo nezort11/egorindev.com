@@ -1,22 +1,13 @@
 ---
 title: "Images in Python, Django and Pillow"
 date: 2021-10-06
+lastmode: 2022-03-03
 description:
   "Comparison of working with images in Python language, Django framework and
   Pillow package."
 ---
 
 # Images in Python, Django and Pillow
-
-Devlog #1 (blog post):
-
-- background/problem/project
-
-- research/information/content
-
-- summary
-
----
 
 Recently working on my project, I needed to implement image format conversion
 and then save into the database. This functionality should be represented as web
@@ -41,9 +32,8 @@ Files (or data in general) can be **located** on:
 
 - in-memory (RAM)
 
-In-memory file stream are also called _buffers_.
-
-There are 3 main **stream types**:
+In-memory file stream are also called _buffers_. There are 3 main **stream
+types**:
 
 - binary stream (bytes stream)
 
@@ -54,7 +44,7 @@ There are 3 main **stream types**:
 We can open file in different modes (e.g. `rt`, `wt`, `rb`, `wb`) and get
 different types of stream.
 
-## io module
+## `io` module
 
 Python also has `io` module, where we can see some of the classes and function
 for managing input/output operations.
@@ -73,13 +63,13 @@ for managing input/output operations.
 
 Let's look at the Django file hierarchy.
 
-<img title="" src="file:///Users/egorzorin/Desktop/blog/django_files.png" alt="django_files.png" data-align="center">
+![Django file hierarchy](/img/django-files-structure.drawio.png)
 
 > I think that small snippet of code (especially Python code) can give more
-> understanding than a hounder of words. So I will provide small code snippets
-> of file classes declaration from the Django source code.
+> understanding than a hounder of words. So I will provide them from the Django
+> source code.
 
-- [FileProxyMixin](https://github.com/django/django/blob/2116238d5f2ce19571becb5620ef16ce9048db9f/django/core/files/utils.py#L27)
+- [`FileProxyMixin`](https://github.com/django/django/blob/2116238d5f2ce19571becb5620ef16ce9048db9f/django/core/files/utils.py#L27)
   is a class that proxies (copies the properties and methods) from the Python
   standard file object like `read`, `write` or `name`. It is basically an
   _alias/proxy for the regular Python stream object_.
@@ -100,7 +90,7 @@ class FileProxyMixin:
      # ...
 ```
 
-- [File](https://github.com/django/django/blob/2116238d5f2ce19571becb5620ef16ce9048db9f/django/core/files/base.py#L8)
+- [`File`](https://github.com/django/django/blob/2116238d5f2ce19571becb5620ef16ce9048db9f/django/core/files/base.py#L8)
   initializes file and provides basic file attributes and methods + some
   convenient method for getting size and file chunks.
 
@@ -122,10 +112,9 @@ class File(FileProxyMixin):
     # ...
 ```
 
-- [**ContentFile**](abc), v**ImageFile** have notion about the actual content
-  stored in the file. ContentFile can be StringIO or BytesIO stream. ImageFile
-  _uses Pillow_ to provide additional information (width/height) about image
-  stream.
+- [`ContentFile`](abc), `ImageFile` have notion about the actual content stored
+  in the file. ContentFile can be StringIO or BytesIO stream. ImageFile _uses
+  Pillow_ to provide additional information (width/height) about image stream.
 
 ```python
 class ContentFile(File):
@@ -164,13 +153,13 @@ class ImageFile(File):
         return self._dimensions_cache
 ```
 
-- **FieldFile** is a representation of the model FileField. It wraps the _field
+- `FieldFile` is a representation of the model `FileField`. It wraps the _field
   file storage_ for file streaming. It provides the following attributes and
   methods:
 
-  - name, path, url, size
+  - `name`, `path`, `url`, `size`
 
-  - save(), delete()
+  - `save()`, `delete()`
 
 ```python
 class FieldFile(File):
@@ -183,9 +172,9 @@ class FieldFile(File):
     # ...
 ```
 
-- **UploadFile** is very similar to File class but it also provide additional
-  attributes submitted from the HTML form like `size`, `content_type`,
-  `charset`.
+- `UploadFile` is very similar to File class but it also provide additional
+  attributes submitted from the HTML form like `size`, `content_type`, `charset`
+  that are not saved in the database or filesystem.
 
 ```python
 class UploadedFile(File):
@@ -206,12 +195,11 @@ class UploadedFile(File):
 
 # Pillow
 
-Pillow uses **ImageFile** class to store image data/file stream. We use pillow
-to:
+Pillow uses `ImageFile` class to store image data/file stream. We use pillow to:
 
-1. Parse file as image and get additional imaging information.
+1. Parse file as image and get additional imaging information
 
-2. Perform manipulation to that file as to image (crop, resize, convert, etc.).
+2. Perform manipulation to that file as to image (crop, resize, convert, etc.)
 
 In my project I used pillow to get specific image information (for validation
 and manipulation) from **plain bytes object or stream**. And then convert this
@@ -249,6 +237,3 @@ def _convert(self):
 Python file management is greatly simplified by designers. And since both Django
 and Pillow are using Python file objects/classes it is very easy to work with
 them and seamlessly move between different file types.
-
-I hope this article helped get more in-depth understanding of the file
-management.

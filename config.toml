@@ -25,6 +25,7 @@ dateFormat = "Mon, Jan 2, 2006"
 ShowToc = true
 TocOpen = false
 ShowCodeCopyButtons = true
+disableThemeToggle = true
 # 3rd-parties
 #
 github = "https://github.com/Egor4ik325"
@@ -49,9 +50,15 @@ url = "https://github.com/Egor4ik325"
 name = "linkedin"
 url = "https://linkedin.com/nezort11"
 
+[params.editPost]
+URL = "https://github.com/Egor4ik325/egorindev.com/tree/content"
+Text = "Suggest Changes"
+appendFilePath = true
+
 # [[params.socialIcons]]
 # name = "stackoverflow"
 # url = "https://stackoverflow.com/users/13774599/egor4ik325"
+
 # [[params.socialIcons]]
 # name = "fiverr"
 # url = "https://www.fiverr.com/nezort11"
