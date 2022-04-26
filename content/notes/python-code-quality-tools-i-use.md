@@ -7,9 +7,9 @@ description:
 
 # Python Code Quality Tools I Use
 
-The goal was to have more or less **exhaustive Python code quality setup for VS Code** with minimal overlapping between the tools.
+The goal is to have more or less **exhaustive code quality setup** for VS Code and Python with minimal overlapping between the tools.
 
-**What I use:**:
+**What I use**:
 
 - `VS Code` modern web-based lightweight editor with optional IDE functionality (> PyCharm, Vim)
 
@@ -25,7 +25,7 @@ The goal was to have more or less **exhaustive Python code quality setup for VS 
   
   - `pylint` + `pylint-django`/`pylint-celery` for complete linting (stylistic, error, ...) (~`eslint`) (> flake8) 
 
-**What I don't use:**
+**What I don't use**:
 
 - Other CQ tools (pycodestyle, pydocstyle, pyflakes, mccabe, flake8 (wraps previous + plugins), prospector (wraps previous), pylama (wraps previous))
 

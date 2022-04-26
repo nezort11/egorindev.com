@@ -21,14 +21,14 @@ mainSections = ["notes"]
 intro = true
 # Post
 #
-dateFormat = "Mon, Jan 2, 2006"
+dateFormat = "Jan 2, 2006"
 ShowToc = true
 TocOpen = true
 ShowCodeCopyButtons = true
 disableThemeToggle = true
 # 3rd-parties
 #
-github = "https://github.com/Egor4ik325"
+github = "https://github.com/nezort11"
 email = "nezort11@gmail.com"
 opengraph = true
 
