@@ -11,7 +11,7 @@ ignoreErrors = ["error-remote-getjson"] # twitter
 # Meta
 #
 headline = "EgorInDev"
-description = "Blog about web development, scripting and self-hosting."
+description = "Blog about webdev, scripting and devops."
 keywords = ["blog", "notes", "markdown", "personal"]
 author = "Me"
 # Site
@@ -40,7 +40,7 @@ apple_touch_icon = "/apple-touch-icon.png"
 
 [params.homeInfoParams]
 Title = "hi, from Egor 👋"
-Content = "Welcome to my markdown notes store about webdev, scripting and devops. I hope you will find it useful."
+Content = "Welcome to my markdown notes store about webdev, scripting and devops."
 
 [[params.socialIcons]]
 name = "github"

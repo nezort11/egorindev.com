@@ -1,8 +1,11 @@
 ---
+
 title: "API documentation options"
 date: 2022-04-26
 description: "Comparison of the most popular API documentation options"
+
 ---
+
 # API documentation options
 
 - [Swagger UI](https://github.com/swagger-api/swagger-ui)
