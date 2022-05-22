@@ -11,7 +11,7 @@ ignoreErrors = ["error-remote-getjson"] # twitter
 # Meta
 #
 headline = "EgorInDev"
-description = "Blog about webdev, scripting and devops."
+description = "Blog about webdev, self-hosting/devops and scripting."
 keywords = ["blog", "notes", "markdown", "personal"]
 author = "Me"
 # Site
@@ -39,8 +39,8 @@ favicon32x32 = "/favicon-32x32.png"
 apple_touch_icon = "/apple-touch-icon.png"
 
 [params.homeInfoParams]
-Title = "hi, from Egor 👋"
-Content = "Welcome to my markdown notes store about webdev, scripting and devops."
+Title = "Hi, from Egor 👋"
+Content = "Welcome to my markdown notes store about webdev, self-hosting/devops and scripting."
 
 [[params.socialIcons]]
 name = "github"
@@ -51,7 +51,7 @@ url = "https://github.com/Egor4ik325"
 # url = "https://linkedin.com/nezort11"
 
 [params.editPost]
-URL = "https://github.com/Egor4ik325/egorindev.com/tree/content"
+URL = "https://github.com/Egor4ik325/egorindev.com/tree/main/content"
 Text = "Suggest Changes"
 appendFilePath = true
 
